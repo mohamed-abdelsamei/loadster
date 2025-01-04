@@ -14,7 +14,9 @@ use reqwest::{blocking::Client, Method, StatusCode};
 
 /// Command line arguments parser
 #[derive(Parser)]
-#[clap(about = "Loadster is a simple load testing tool that allows you to test the performance of your web applications by sending concurrent HTTP requests.")]
+#[clap(
+    about = "Loadster is a simple load testing tool that allows you to test the performance of your web applications by sending concurrent HTTP requests."
+)]
 struct Cli {
     /// The target URL for the load test
     #[clap(short = 'u', long, help = "The target URL for the load test")]
@@ -25,19 +27,37 @@ struct Cli {
     method: HttpMethod,
 
     /// The number of concurrent users (default: 10)
-    #[clap(short = 'c', long, default_value = "10", help = "The number of concurrent users (default: 10)")]
+    #[clap(
+        short = 'c',
+        long,
+        default_value = "10",
+        help = "The number of concurrent users (default: 10)"
+    )]
     users: i32,
 
     /// The timeout for each request in seconds (default: 30)
-    #[clap(short = 't', long, default_value = "30", help = "The timeout for each request in seconds (default: 30)")]
+    #[clap(
+        short = 't',
+        long,
+        default_value = "30",
+        help = "The timeout for each request in seconds (default: 30)"
+    )]
     timeout: u64,
 
     /// Additional headers to include in the requests
-    #[clap(short = 'H', long, help = "Additional headers to include in the requests")]
+    #[clap(
+        short = 'H',
+        long,
+        help = "Additional headers to include in the requests"
+    )]
     headers: Vec<String>,
 
     /// The body of the request (for POST, PUT methods)
-    #[clap(short = 'b', long, help = "The body of the request (for POST, PUT methods)")]
+    #[clap(
+        short = 'b',
+        long,
+        help = "The body of the request (for POST, PUT methods)"
+    )]
     body: Option<String>,
 
     /// Enable verbose output
