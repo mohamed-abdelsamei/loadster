@@ -20,8 +20,8 @@ struct Cli {
     #[clap(short = 'u', long, help = "The target URL for the load test")]
     url: String,
 
-    /// The HTTP method to use (default: GET). Supported methods: GET, POST, PUT, DELETE
-    #[clap(short = 'm', long, value_enum, default_value_t = HttpMethod::Get, help = "The HTTP method to use (default: GET). Supported methods: GET, POST, PUT, DELETE")]
+    /// The HTTP method to use (default: GET). Supported methods: GET, POST, PUT, DELETE, PATCH
+    #[clap(short = 'm', long, value_enum, default_value_t = HttpMethod::Get, help = "The HTTP method to use (default: GET). Supported methods: GET, POST, PUT, DELETE, PATCH")]
     method: HttpMethod,
 
     /// The number of concurrent users (default: 10)
